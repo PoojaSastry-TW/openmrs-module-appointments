@@ -125,13 +125,7 @@ public class AppointmentMapper {
         appointment.setAppointmentKind(AppointmentKind.valueOf(appointmentRequest.getAppointmentKind()));
         appointment.setComments(appointmentRequest.getComments());
         if (appointmentRequest.getPriority() != null || StringUtils.isNotBlank(appointmentRequest.getPriority())) {
-            if (Stream.of(AppointmentPriority.values())
-                    .filter(priority -> priority.name().equalsIgnoreCase(appointmentRequest.getPriority()))
-                    .count() == 0) {
-                appointment.setPriority(AppointmentPriority.Invalid);
-            } else {
                 appointment.setPriority(AppointmentPriority.valueOf(appointmentRequest.getPriority()));
-            }
         }
         mapProvidersForAppointment(appointment, appointmentRequest.getProviders());
         mapReasonsForAppointment(appointment, appointmentRequest.getReasonConceptUuids());
