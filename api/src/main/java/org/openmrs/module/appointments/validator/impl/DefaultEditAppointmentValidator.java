@@ -2,6 +2,7 @@ package org.openmrs.module.appointments.validator.impl;
 
 import org.openmrs.module.appointments.dao.AppointmentDao;
 import org.openmrs.module.appointments.model.Appointment;
+import org.openmrs.module.appointments.model.AppointmentPriority;
 import org.openmrs.module.appointments.validator.AppointmentValidator;
 
 import java.util.List;
